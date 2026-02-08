@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import Navbar from "./components/Navbar";
+import ComplaintList from "./components/ComplaintList";
+import Dashboard from "./components/Dashboard";
+import ComplaintForm from "./components/ComplaintForm";
 
 function App() {
+  const userId = "123"; // Dummy user ID
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="container">
+        <h1>Welcome to Smart Complaint Management System</h1>
+        <ComplaintForm userId={userId} />
+        <ComplaintList />
+        <Dashboard />
+      </div>
     </div>
   );
 }
